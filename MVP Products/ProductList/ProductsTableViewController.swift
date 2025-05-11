@@ -10,7 +10,7 @@ import UIKit
 class ProductsTableViewController: UITableViewController, ProductsListViewProtocol {
     
     
-    private var presenter: ProductsPresenter!
+    private var presenter = ProductsPresenter()
     private var products: [Product] = []
     
     
@@ -20,9 +20,9 @@ class ProductsTableViewController: UITableViewController, ProductsListViewProtoc
         
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "ProductCell")
         
-        
-        presenter=ProductsPresenter(view: self)
-        presenter?.viewDidLoad()
+        presenter.attachView(view: self)
+
+        presenter.loadProductsList()
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false

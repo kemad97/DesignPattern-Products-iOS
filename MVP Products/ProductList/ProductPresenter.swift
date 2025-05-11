@@ -17,14 +17,11 @@ class ProductsPresenter {
     
     private var products :[Product] = []
     
-    init (view : ProductsListViewProtocol)
-    {
-        self.view=view
-    }
+    func attachView(view: ProductsListViewProtocol) {
+            self.view = view
+        }
     
-    func viewDidLoad (){
-        loadProducts()
-    }
+   
     
     func didSelectProduct(at index: Int) {
         if index >= 0 && index < products.count {
@@ -32,7 +29,7 @@ class ProductsPresenter {
         }
     }
 
-    private func loadProducts() {
+     func loadProductsList() {
            
            APIService.fetchProducts { [weak self] result in
                DispatchQueue.main.async {
