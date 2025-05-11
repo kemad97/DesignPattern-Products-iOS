@@ -17,6 +17,13 @@
 		E1DBC9BF2DD09E2D001DAD2B /* MVP_ProductsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1DBC9BE2DD09E2D001DAD2B /* MVP_ProductsTests.swift */; };
 		E1DBC9C92DD09E2D001DAD2B /* MVP_ProductsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1DBC9C82DD09E2D001DAD2B /* MVP_ProductsUITests.swift */; };
 		E1DBC9CB2DD09E2D001DAD2B /* MVP_ProductsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1DBC9CA2DD09E2D001DAD2B /* MVP_ProductsUITestsLaunchTests.swift */; };
+		E1DBC9D82DD0A349001DAD2B /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1DBC9D72DD0A349001DAD2B /* Product.swift */; };
+		E1DBC9DA2DD0A3C8001DAD2B /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1DBC9D92DD0A3C8001DAD2B /* ApiService.swift */; };
+		E1DBC9E02DD0A40B001DAD2B /* ProductPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1DBC9DF2DD0A40B001DAD2B /* ProductPresenter.swift */; };
+		E1DBC9E22DD0A422001DAD2B /* ProductDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1DBC9E12DD0A422001DAD2B /* ProductDetailPresenter.swift */; };
+		E1DBC9E42DD0A432001DAD2B /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1DBC9E32DD0A432001DAD2B /* ProductDetailViewController.swift */; };
+		E1DBC9EB2DD0A52F001DAD2B /* ProductsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1DBC9E92DD0A52F001DAD2B /* ProductsTableViewController.swift */; };
+		E1DBC9EC2DD0A52F001DAD2B /* ProductsTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1DBC9EA2DD0A52F001DAD2B /* ProductsTableViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +58,13 @@
 		E1DBC9C42DD09E2D001DAD2B /* MVP ProductsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MVP ProductsUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1DBC9C82DD09E2D001DAD2B /* MVP_ProductsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVP_ProductsUITests.swift; sourceTree = "<group>"; };
 		E1DBC9CA2DD09E2D001DAD2B /* MVP_ProductsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVP_ProductsUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		E1DBC9D72DD0A349001DAD2B /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		E1DBC9D92DD0A3C8001DAD2B /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
+		E1DBC9DF2DD0A40B001DAD2B /* ProductPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductPresenter.swift; sourceTree = "<group>"; };
+		E1DBC9E12DD0A422001DAD2B /* ProductDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailPresenter.swift; sourceTree = "<group>"; };
+		E1DBC9E32DD0A432001DAD2B /* ProductDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
+		E1DBC9E92DD0A52F001DAD2B /* ProductsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsTableViewController.swift; sourceTree = "<group>"; };
+		E1DBC9EA2DD0A52F001DAD2B /* ProductsTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductsTableViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +123,10 @@
 				E1DBC9B22DD09E2D001DAD2B /* LaunchScreen.storyboard */,
 				E1DBC9B52DD09E2D001DAD2B /* Info.plist */,
 				E1DBC9AD2DD09E2C001DAD2B /* MVP_Products.xcdatamodeld */,
+				E1DBC9E82DD0A4B1001DAD2B /* Model */,
+				E1DBC9E72DD0A4A7001DAD2B /* Service */,
+				E1DBC9E52DD0A462001DAD2B /* ProductList */,
+				E1DBC9E62DD0A47D001DAD2B /* ProductDetail */,
 			);
 			path = "MVP Products";
 			sourceTree = "<group>";
@@ -128,6 +146,41 @@
 				E1DBC9CA2DD09E2D001DAD2B /* MVP_ProductsUITestsLaunchTests.swift */,
 			);
 			path = "MVP ProductsUITests";
+			sourceTree = "<group>";
+		};
+		E1DBC9E52DD0A462001DAD2B /* ProductList */ = {
+			isa = PBXGroup;
+			children = (
+				E1DBC9DF2DD0A40B001DAD2B /* ProductPresenter.swift */,
+				E1DBC9E92DD0A52F001DAD2B /* ProductsTableViewController.swift */,
+				E1DBC9EA2DD0A52F001DAD2B /* ProductsTableViewController.xib */,
+			);
+			path = ProductList;
+			sourceTree = "<group>";
+		};
+		E1DBC9E62DD0A47D001DAD2B /* ProductDetail */ = {
+			isa = PBXGroup;
+			children = (
+				E1DBC9E12DD0A422001DAD2B /* ProductDetailPresenter.swift */,
+				E1DBC9E32DD0A432001DAD2B /* ProductDetailViewController.swift */,
+			);
+			path = ProductDetail;
+			sourceTree = "<group>";
+		};
+		E1DBC9E72DD0A4A7001DAD2B /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				E1DBC9D92DD0A3C8001DAD2B /* ApiService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		E1DBC9E82DD0A4B1001DAD2B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E1DBC9D72DD0A349001DAD2B /* Product.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -237,6 +290,7 @@
 				E1DBC9B42DD09E2D001DAD2B /* LaunchScreen.storyboard in Resources */,
 				E1DBC9B12DD09E2D001DAD2B /* Assets.xcassets in Resources */,
 				E1DBC9AC2DD09E2C001DAD2B /* Main.storyboard in Resources */,
+				E1DBC9EC2DD0A52F001DAD2B /* ProductsTableViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,9 +316,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				E1DBC9A92DD09E2C001DAD2B /* ViewController.swift in Sources */,
+				E1DBC9E22DD0A422001DAD2B /* ProductDetailPresenter.swift in Sources */,
 				E1DBC9A52DD09E2C001DAD2B /* AppDelegate.swift in Sources */,
+				E1DBC9E02DD0A40B001DAD2B /* ProductPresenter.swift in Sources */,
+				E1DBC9DA2DD0A3C8001DAD2B /* ApiService.swift in Sources */,
+				E1DBC9D82DD0A349001DAD2B /* Product.swift in Sources */,
+				E1DBC9E42DD0A432001DAD2B /* ProductDetailViewController.swift in Sources */,
 				E1DBC9A72DD09E2C001DAD2B /* SceneDelegate.swift in Sources */,
 				E1DBC9AF2DD09E2C001DAD2B /* MVP_Products.xcdatamodeld in Sources */,
+				E1DBC9EB2DD0A52F001DAD2B /* ProductsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
