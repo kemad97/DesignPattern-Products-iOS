@@ -7,18 +7,17 @@
 
 import Foundation
 
-protocol ProductsViewProtocol: AnyObject {
+protocol ProductsListViewProtocol: AnyObject {
     func showProducts(_ products: [Product])
-    func showError(_ message: String)
     func navigateToProductDetail(_ product: Product)
 }
 
 class ProductsPresenter {
-    weak private var view:ProductsViewProtocol?
+    weak private var view:ProductsListViewProtocol?
     
     private var products :[Product] = []
     
-    init (view : ProductsViewProtocol)
+    init (view : ProductsListViewProtocol)
     {
         self.view=view
     }
@@ -43,7 +42,7 @@ class ProductsPresenter {
                        self?.products = products
                        self?.view?.showProducts(products)
                    case .failure(let error):
-                       self?.view?.showError(error.localizedDescription)
+                       print(error)
                    }
                }
            }
