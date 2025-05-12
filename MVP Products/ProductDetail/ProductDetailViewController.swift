@@ -27,11 +27,10 @@ class ProductDetailViewController: UIViewController {
         
         
         viewModel.detailsChanged = { [weak self] in
-            guard let self = self else { return }
-            self.title = self.viewModel.title
-            self.priceLabel.text = self.viewModel.price
-            self.txtView.text = self.viewModel.description
-            self.imgView.image = self.viewModel.image
+            self?.title = self?.viewModel.title
+            self?.priceLabel.text = self?.viewModel.price
+            self?.txtView.text = self?.viewModel.description
+            self?.imgView.image = self?.viewModel.image
         }
         
         if let product = product{

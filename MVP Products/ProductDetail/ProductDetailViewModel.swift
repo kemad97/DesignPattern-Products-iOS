@@ -21,16 +21,17 @@ class ProductDetailViewModel {
         title = product.title ?? ""
         
         if let productPrice = product.price {
-            price = String(format: "$%.2f", productPrice)
+            price = String(productPrice)
         } else {
-            price = "Price not available"
+            price = " "
         }
         
         description = product.description ?? ""
         
         
         
-        if let thumbnailString = product.thumbnail, let url = URL(string: thumbnailString) {
+        if let thumbnailString = product.thumbnail,
+            let url = URL(string: thumbnailString) {
             loadImage(url)
         }
         detailsChanged?()
