@@ -19,8 +19,8 @@
 		E1DBC9CB2DD09E2D001DAD2B /* MVP_ProductsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1DBC9CA2DD09E2D001DAD2B /* MVP_ProductsUITestsLaunchTests.swift */; };
 		E1DBC9D82DD0A349001DAD2B /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1DBC9D72DD0A349001DAD2B /* Product.swift */; };
 		E1DBC9DA2DD0A3C8001DAD2B /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1DBC9D92DD0A3C8001DAD2B /* ApiService.swift */; };
-		E1DBC9E02DD0A40B001DAD2B /* ProductPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1DBC9DF2DD0A40B001DAD2B /* ProductPresenter.swift */; };
-		E1DBC9E22DD0A422001DAD2B /* ProductDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1DBC9E12DD0A422001DAD2B /* ProductDetailPresenter.swift */; };
+		E1DBC9E02DD0A40B001DAD2B /* ProductsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1DBC9DF2DD0A40B001DAD2B /* ProductsViewModel.swift */; };
+		E1DBC9E22DD0A422001DAD2B /* ProductDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1DBC9E12DD0A422001DAD2B /* ProductDetailViewModel.swift */; };
 		E1DBC9E42DD0A432001DAD2B /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1DBC9E32DD0A432001DAD2B /* ProductDetailViewController.swift */; };
 		E1DBC9EB2DD0A52F001DAD2B /* ProductsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1DBC9E92DD0A52F001DAD2B /* ProductsTableViewController.swift */; };
 		E1DBC9EC2DD0A52F001DAD2B /* ProductsTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1DBC9EA2DD0A52F001DAD2B /* ProductsTableViewController.xib */; };
@@ -60,8 +60,8 @@
 		E1DBC9CA2DD09E2D001DAD2B /* MVP_ProductsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVP_ProductsUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		E1DBC9D72DD0A349001DAD2B /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		E1DBC9D92DD0A3C8001DAD2B /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
-		E1DBC9DF2DD0A40B001DAD2B /* ProductPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductPresenter.swift; sourceTree = "<group>"; };
-		E1DBC9E12DD0A422001DAD2B /* ProductDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailPresenter.swift; sourceTree = "<group>"; };
+		E1DBC9DF2DD0A40B001DAD2B /* ProductsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsViewModel.swift; sourceTree = "<group>"; };
+		E1DBC9E12DD0A422001DAD2B /* ProductDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewModel.swift; sourceTree = "<group>"; };
 		E1DBC9E32DD0A432001DAD2B /* ProductDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
 		E1DBC9E92DD0A52F001DAD2B /* ProductsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsTableViewController.swift; sourceTree = "<group>"; };
 		E1DBC9EA2DD0A52F001DAD2B /* ProductsTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductsTableViewController.xib; sourceTree = "<group>"; };
@@ -151,7 +151,7 @@
 		E1DBC9E52DD0A462001DAD2B /* ProductList */ = {
 			isa = PBXGroup;
 			children = (
-				E1DBC9DF2DD0A40B001DAD2B /* ProductPresenter.swift */,
+				E1DBC9DF2DD0A40B001DAD2B /* ProductsViewModel.swift */,
 				E1DBC9E92DD0A52F001DAD2B /* ProductsTableViewController.swift */,
 				E1DBC9EA2DD0A52F001DAD2B /* ProductsTableViewController.xib */,
 			);
@@ -161,7 +161,7 @@
 		E1DBC9E62DD0A47D001DAD2B /* ProductDetail */ = {
 			isa = PBXGroup;
 			children = (
-				E1DBC9E12DD0A422001DAD2B /* ProductDetailPresenter.swift */,
+				E1DBC9E12DD0A422001DAD2B /* ProductDetailViewModel.swift */,
 				E1DBC9E32DD0A432001DAD2B /* ProductDetailViewController.swift */,
 			);
 			path = ProductDetail;
@@ -316,9 +316,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				E1DBC9A92DD09E2C001DAD2B /* ViewController.swift in Sources */,
-				E1DBC9E22DD0A422001DAD2B /* ProductDetailPresenter.swift in Sources */,
+				E1DBC9E22DD0A422001DAD2B /* ProductDetailViewModel.swift in Sources */,
 				E1DBC9A52DD09E2C001DAD2B /* AppDelegate.swift in Sources */,
-				E1DBC9E02DD0A40B001DAD2B /* ProductPresenter.swift in Sources */,
+				E1DBC9E02DD0A40B001DAD2B /* ProductsViewModel.swift in Sources */,
 				E1DBC9DA2DD0A3C8001DAD2B /* ApiService.swift in Sources */,
 				E1DBC9D82DD0A349001DAD2B /* Product.swift in Sources */,
 				E1DBC9E42DD0A432001DAD2B /* ProductDetailViewController.swift in Sources */,

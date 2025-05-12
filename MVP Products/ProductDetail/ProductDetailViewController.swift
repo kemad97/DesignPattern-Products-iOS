@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ProductDetailViewController: UIViewController, ProductDetailView {
+class ProductDetailViewController: UIViewController {
     
     @IBOutlet weak var txtView: UITextView!
     
@@ -18,46 +18,38 @@ class ProductDetailViewController: UIViewController, ProductDetailView {
     @IBOutlet weak var titleLabel: UILabel!
     
     var product:Product?
-    var presenter = ProductDetailPresenter()
+    private let viewModel = ProductDetailViewModel()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        presenter.attachView(v: self)
-        if let product = product {
-            presenter.loadProductDetails(product)
+        
+        
+        viewModel.detailsChanged = { [weak self] in
+            guard let self = self else { return }
+            self.title = self.viewModel.title
+            self.priceLabel.text = self.viewModel.price
+            self.txtView.text = self.viewModel.description
+            self.imgView.image = self.viewModel.image
         }
+        
+        if let product = product{
+            viewModel.setProduct(product)
+        }
+        
+        
+        
+        /*
+         // MARK: - Navigation
+         
+         // In a storyboard-based application, you will often want to do a little preparation before navigation
+         override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+         // Get the new view controller using segue.destination.
+         // Pass the selected object to the new view controller.
+         }
+         */
+        
+        
     }
-    
-    
-    func displayTitle(_ title: String) {
-        self.title = title
-            
-    }
-    
-    func displayPrice(_ price: String) {
-        priceLabel.text = price
-
-    }
-    
-    func displayDescription(_ description: String) {
-        txtView.text = description
-
-    }
-    
-    func displayImage(_ image: UIImage) {
-        imgView.image = image
-
-    }
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
-    
 }

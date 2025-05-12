@@ -7,10 +7,11 @@
 
 import UIKit
 
-class ProductsTableViewController: UITableViewController, ProductsListViewProtocol {
+class ProductsTableViewController: UITableViewController {
     
     
-    private var presenter = ProductsPresenter()
+    private let viewModel = ProductsViewModel()
+    
     private var products: [Product] = []
     
     
@@ -20,15 +21,22 @@ class ProductsTableViewController: UITableViewController, ProductsListViewProtoc
         
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "ProductCell")
         
-        presenter.attachView(view: self)
-
-        presenter.loadProductsList()
+        viewModel.loadProducts()
         
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
+        viewModel.productsChanged = {
+            [weak self] products in
+            self?.products = products
+            self?.tableView.reloadData()
+        }
         
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        viewModel.didSelectProduct = { [weak self] product in
+            if let detailVC = self?.storyboard?.instantiateViewController(withIdentifier: "Detail_Id") as? ProductDetailViewController {
+                detailVC.product = product
+            
+                self?.navigationController?.pushViewController(detailVC, animated: true)
+            }
+        }
+      
     }
     
     // MARK: - Table view data source
@@ -75,27 +83,11 @@ class ProductsTableViewController: UITableViewController, ProductsListViewProtoc
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        presenter.didSelectProduct(at: indexPath.row)
+        viewModel.selectProduct(at: indexPath.row)
+
     }
     
-    func showProducts(_ products: [Product]) {
-        self.products = products
-        tableView.reloadData()
-        refreshControl?.endRefreshing()
-    }
-    
-    
-    
-    
-    
-    func navigateToProductDetail(_ product: Product) {
-        
-        if let detailVC = storyboard?.instantiateViewController(withIdentifier: "Detail_Id") as? ProductDetailViewController {
-            detailVC.product = product
-            
-            navigationController?.pushViewController(detailVC, animated: true)
-        }
-    }
+  
     
     
 }
