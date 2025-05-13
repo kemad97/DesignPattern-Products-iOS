@@ -7,9 +7,7 @@
 
 import Foundation
 
-protocol NetworkServiceProtocol {
-    static func fetchProducts(completion: @escaping (ProductResponse) -> Void)
-}
+
 
 class APIService: NetworkServiceProtocol {
     
@@ -43,3 +41,4 @@ class APIService: NetworkServiceProtocol {
         }.resume()
     }
 }
+

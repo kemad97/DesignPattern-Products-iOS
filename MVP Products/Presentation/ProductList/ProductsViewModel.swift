@@ -17,6 +17,12 @@ class ProductsViewModel {
         }
     }
     
+    private let getProductsUseCase : GetProductsUseCase
+    
+    init(getProductsUseCase: GetProductsUseCase) {
+        self.getProductsUseCase = getProductsUseCase
+    }
+    
     
     var productsChanged : ( ([Product]) -> Void)?
     var didSelectProduct: ( (Product) -> Void)?

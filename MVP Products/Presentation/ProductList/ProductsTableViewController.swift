@@ -10,9 +10,12 @@ import UIKit
 class ProductsTableViewController: UITableViewController {
     
     
-    private let viewModel = ProductsViewModel()
-    
+    private var viewModel : ProductsViewModel!
     private var products: [Product] = []
+    
+    func inject (viewModel : ProductsViewModel){
+        self.viewModel=viewModel
+    }
     
     
     override func viewDidLoad() {
@@ -21,7 +24,6 @@ class ProductsTableViewController: UITableViewController {
         
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "ProductCell")
         
-        viewModel.loadProducts()
         
         viewModel.productsChanged = {
             [weak self] products in
@@ -31,12 +33,17 @@ class ProductsTableViewController: UITableViewController {
         
         viewModel.didSelectProduct = { [weak self] product in
             if let detailVC = self?.storyboard?.instantiateViewController(withIdentifier: "Detail_Id") as? ProductDetailViewController {
-                detailVC.product = product
-            
+                
+                let detailViewModel = ProductDetailViewModel()
+                detailVC.inject(viewModel: detailViewModel, product: product)
+
                 self?.navigationController?.pushViewController(detailVC, animated: true)
             }
         }
-      
+        
+        
+        viewModel.loadProducts()
+
     }
     
     // MARK: - Table view data source
